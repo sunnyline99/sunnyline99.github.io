@@ -1,0 +1,38 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    font-family: "Caveat";
+  }
+
+body {
+    margin: 0;
+    height: 3000px;
+}
+
+img {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.main-content-title {
+    font-size: 64px;
+    margin: 20px;
+}
+
+.inline-anchor{
+    color: rgba(255, 182, 182, 0.8);
+    transition: color 0.2s;
+}
+
+.inline-anchor:hover{
+    color: rgba(255, 182, 182, 1);
+}
