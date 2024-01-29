@@ -168,10 +168,15 @@
 }
 
 .paralax {
+    display: flex;
     background-image: url('images/1.jpg');
     min-height: 500px;
+    max-width: 80%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
