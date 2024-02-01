@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 200vh; /* Adjust the height as needed for testing */
+        }
+
+        .paralax-wrapper {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .paralax {
+            display: flex;
+            background-attachment: fixed;
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="paralax-wrapper">
+    <div class="paralax" style="background-image: url('images/2.jpg'); transform: translate(0px, 0px);">
+        <span style="font-size: 80px;">
+            SZKOLENIA
+        </span>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const parallax = document.querySelector('.paralax');
+        const scrollPosition = window.scrollY;
+        parallax.style.transform = 'translate(0px, ' + scrollPosition * 0.5 + 'px)';
+    });
+</script>
+
+</body>
+</html>
