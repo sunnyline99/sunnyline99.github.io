@@ -166,3 +166,32 @@
     display: flex;
     flex-direction: row;
 }
+
+.paralax-wrapper {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.paralax {
+    display: flex;
+    background-attachment: fixed;
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.paralax-text {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.empty-box{
+    height: 100%;
+    width: 50%;
+}
