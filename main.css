@@ -9,6 +9,24 @@
     border-bottom: 2px double #ffd1d1;
 }
 
+.paralax-wrapper {
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.paralax {
+    display: flex;
+    background-attachment: fixed;
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
 .slideshow {
     width: 100%;
     height: 100%;
@@ -75,7 +93,7 @@
 }
 
 .welcome-cotainer-text {
-    display: flex;
+    display: inline;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -91,31 +109,14 @@
     background-color: rgb(255, 254, 254);
 }
 
-.welcome-about-me-image-container {
-    height: 174px;
-}
-
-.welcome-about-me-image {
-    height: 164px;
-    border-radius: 50%;
-    border-color: rgba(255, 182, 182, 0.5);
-    border-style: solid;
-    border-width: 5px;
-    transition: border-color 0.2s;
-}
-
-.welcome-about-me-image:hover {
-    height: 158px;
-    border-width: 8px;
-    border-color: rgba(255, 182, 182, 0.75);
-}
-
 .welcome-container-name{
     height: auto;
     margin: 5px;
 }
 
 .welcome-cotainer-text-description {
+    display: flex;
+    text-align: left;
     height: 50%;
     width: 100%;
     font-size: 25px;
@@ -128,9 +129,32 @@
     border-bottom: 2px double #ffd1d1;
 }
 
+.about-me {
+    display: flex;
+    columns: 1fr 1fr;
+    height: 450px;
+}
+
+.about-me-image-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .about-me-image {
-    height: 400px;
+    height: 300px;
     border-radius: 50%;
+    border-color: rgba(255, 182, 182, 0.5);
+    border-style: solid;
+    border-width: 5px;
+    transition: border-color 0.2s;
+}
+
+.about-me-image:hover {
+    height: 294px;
+    border-width: 8px;
+    border-color: rgba(255, 182, 182, 0.75);
 }
 
 .main-content-gallery {
@@ -173,25 +197,10 @@
     position: relative;
 }
 
-.paralax {
+.paralax-text {
     display: flex;
-    background-attachment: fixed;
-    background-position: 50% 70%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); 
-}
-
-.paralax-text {
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.5); 
-}
-
-.empty-box{
-    height: 100%;
-    width: 50%;
 }
