@@ -62,7 +62,7 @@
         </nav>
 
         <main class="main-content">
-            <div class="paralax-wrapper">
+            <div class="paralax-wrapper-moje-prace">
                 <div class="paralax" style="background-image: url('images/2.jpg'); transform: translate(0px, 0px);">
                     <span style="font-size: 120px;">
                         Moje Prace
@@ -72,13 +72,14 @@
 
             <div class="main-content-gallery" id="prace">
                 <h1 class="main-content-title">Kategorie</h1>
-                <div class="filter-buttons">
-                    <button onclick="filterGallery('all')">All</button>
-                    <button onclick="filterGallery('easter')">Easter</button>
-                    <button onclick="filterGallery('christmas')">Christmas</button>
-                    <!-- Add more buttons for other categories -->
+                <div class="moje-prace-categories" id="filter-container">
+                    <div class="filter-buttons">
+                        <button class="category-button" onclick="filterGallery('all')">All</button>
+                        <button class="category-button" onclick="filterGallery('easter')">Easter</button>
+                        <button class="category-button" onclick="filterGallery('christmas')">Christmas</button>
+                        <!-- Add more buttons for other categories -->
+                    </div>
                 </div>
-                
                 <div class="gallery" id="image-gallery">
                     <!-- Your images go here -->
                     <img src="images/1.jpg" alt="Easter" data-category="easter" onclick="openModal('images/1.jpg')">

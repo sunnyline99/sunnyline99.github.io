@@ -108,6 +108,21 @@
                 Jakich lakierów używasz?
             </div>
         </main>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+                const images = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg']; // Array of image URLs
+                let currentIndex = 0;
+        
+                function changeBackground() {
+                    const parallax = document.querySelector('.paralax');
+                    parallax.style.backgroundImage = `url('${images[currentIndex]}')`;
+                    currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+                }
+        
+                setInterval(changeBackground, 3000); // Change image every 3 seconds
+            });
+        </script>
         
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script> 
 
