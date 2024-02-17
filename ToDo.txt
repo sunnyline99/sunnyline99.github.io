@@ -1,0 +1,8 @@
+1) powiêkszanie obrazów w moje prace + mo¿liwoœæ scrolowania, oddalania, przybli¿ania itp.
+2) podczas scrolowania jakieœ ³adne przejœcia tekstu
+3) podczas przerzucania zdjêæ na stronie startowej ³adne przejœcie pomiêdzy (smooth)
+4) dorobiæ sekcjê FAQ
+5) dorobiæ sekcjê szkoleñ
+6) doboriæ now¹ sekcjê Blog
+7) Poprawiæ sekcjê kontakt
+8) ogarn¹æ wysokoœæ ca³ej strony - nie fixed
