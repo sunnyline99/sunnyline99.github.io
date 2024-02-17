@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HVYWE8ZXTS"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-HVYWE8ZXTS');
+		</script>
+		
+        <title>Olcixixnails</title>
+
+        <link rel="stylesheet" href="general.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="main.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navigation-top">
+            <div class="logo-wrapper">
+                <a class="logo-link" href="#">
+                    <p class="logo">Olcixix</p>
+                </a>
+            </div>
+            <div class="navigation-buttons">
+                <a class="navigation-button" role="button" href="#oMnie">
+                    O mnie
+                </a>
+                <a class="navigation-button" href="https://sunnyline99.github.io/moje-prace.html">
+                    Moje prace
+                </a>
+                <a class="navigation-button" href="#szkolenia">
+                    Szkolenia
+                </a>
+                <a class="navigation-button" href="#kontakt">
+                    Kontakt
+                </a>
+                <a class="navigation-button" href="https://sunnyline99.github.io/faq.html">
+                    FAQ
+                </a>
+            </div>
+            <div class="header-social-media">
+                <a class="social-media-header-button" href="https://www.instagram.com/olcixixnails/" target="_blank" title="Instagram">
+                    <img class="social-media-header-icon" src="images/ig.jpg" alt="instagram-header">
+                </a>
+                <a class="social-media-header-button" href="https://www.instagram.com/olcixixnails/" target="_blank" title="Tik-Tok">
+                    <img class="social-media-header-icon" src="images/tiktok.png" alt="tik-tok-header">
+                </a>
+                <a class="social-media-header-button" href="https://www.instagram.com/olcixixnails/" target="_blank" title="Pinterest">
+                    <img class="social-media-header-icon" src="images/pinterest.png" alt="pinterest-header">
+                </a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="paralax-wrapper">
+                <div class="paralax" style="background-image: url('images/2.jpg'); transform: translate(0px, 0px);">
+                    <span style="font-size: 120px;">
+                        Moje Prace
+                    </span>
+                </div>
+            </div>
+
+            <div class="main-content-gallery" id="prace">
+                <h1 class="main-content-title">Moje prace</h1>
+                <div class="filter-buttons">
+                    <button onclick="filterGallery('all')">All</button>
+                    <button onclick="filterGallery('easter')">Easter</button>
+                    <button onclick="filterGallery('christmas')">Christmas</button>
+                    <!-- Add more buttons for other categories -->
+                </div>
+                
+                <div class="gallery" id="image-gallery">
+                    <!-- Your images go here -->
+                    <img src="images/1.jpg" alt="Easter" data-category="easter" onclick="openModal('images/1.jpg')">
+                    <img src="images/2.jpg" alt="Christmas" data-category="christmas">
+                    <img src="images/3.jpg" alt="Christmas" data-category="christmas">
+                    <img src="images/3.jpg" alt="Christmas" data-category="christmas">
+                    <img src="images/3.jpg" alt="Christmas" data-category="christmas">
+                    <img src="images/1.jpg" alt="Easter" data-category="easter">
+                    <img src="images/3.jpg" alt="Christmas" data-category="christmas">
+                    <img src="images/3.jpg" alt="Christmas" data-category="christmas">
+                    <img src="images/3.jpg" alt="Christmas" data-category="christmas">
+                </div>
+            </div>
+        </main>
+
+        <script>
+
+            function filterGallery(category) {
+                const images = document.querySelectorAll('.gallery img');
+                images.forEach(image => {
+                    const imageCategory = image.getAttribute('data-category');
+                    if (category === 'all' || imageCategory === category) {
+                        image.style.display = 'block';
+                    } else {
+                        image.style.display = 'none';
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const images = document.querySelectorAll('.gallery img');
+
+                images.forEach(image => {
+                    // Check if the image has a stored mean color
+                    const storedMeanColor = localStorage.getItem(image.src);
+
+                    if (storedMeanColor) {
+                        // Apply the stored mean color
+                        image.style.background = storedMeanColor;
+                    } else {
+                        // If no stored mean color, calculate and apply it after the image has loaded
+                        image.addEventListener('load', function () {
+                            const meanColor = fillBlankSpacesWithMeanColor(this);
+                            // Store the mean color in local storage
+                            localStorage.setItem(image.src, meanColor);
+                            // Apply the mean color after the image has loaded
+                            this.style.background = meanColor;
+                        });
+                    }
+                });
+
+                function fillBlankSpacesWithMeanColor(image) {
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+
+                    const targetWidth = image.width;
+                    const targetHeight = image.height;
+
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
+
+                    context.drawImage(image, 0, 0, targetWidth, targetHeight);
+
+                    const imageData = context.getImageData(0, 0, targetWidth, targetHeight);
+                    const data = imageData.data;
+
+                    let sumRed = 0;
+                    let sumGreen = 0;
+                    let sumBlue = 0;
+
+                    for (let i = 0; i < data.length; i += 4) {
+                        sumRed += data[i];
+                        sumGreen += data[i + 1];
+                        sumBlue += data[i + 2];
+                    }
+
+                    const meanRed = Math.round(sumRed / (data.length / 4));
+                    const meanGreen = Math.round(sumGreen / (data.length / 4));
+                    const meanBlue = Math.round(sumBlue / (data.length / 4));
+
+                    // Use rgba with alpha set to 0.5 for semi-transparent background
+                    const meanColor = `rgba(${meanRed}, ${meanGreen}, ${meanBlue}, 0.5)`;
+
+                    return meanColor;
+                }
+            });
+        </script>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script> 
+
+        <script type = "text/javascript">
+
+            window.addEventListener('scroll', function () {
+                const parallax = document.querySelector('.paralax');
+                const scrollPosition = window.scrollY;
+                parallax.style.transform = 'translate(0px, ' + scrollPosition * 0.2 + 'px)';
+            });
+
+        </script>
+    </body>
+</html>
