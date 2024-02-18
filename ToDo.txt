@@ -1,8 +1,13 @@
-1) powiêkszanie obrazów w moje prace + mo¿liwoœæ scrolowania, oddalania, przybli¿ania itp.
+1) powiêkszanie obrazów w moje prace + mo¿liwoœæ scrolowania, oddalania, przybli¿ania itp. ----------------------Partialy Done - is ok but need to fix the arrows after the filtering
 2) podczas scrolowania jakieœ ³adne przejœcia tekstu
-3) podczas przerzucania zdjêæ na stronie startowej ³adne przejœcie pomiêdzy (smooth)
+3) podczas przerzucania zdjêæ na stronie startowej ³adne przejœcie pomiêdzy (smooth) ----------------------------Done
 4) dorobiæ sekcjê FAQ
 5) dorobiæ sekcjê szkoleñ
 6) doboriæ now¹ sekcjê Blog
 7) Poprawiæ sekcjê kontakt
-8) ogarn¹æ wysokoœæ ca³ej strony - nie fixed
+8) ogarn¹æ wysokoœæ ca³ej strony - nie fixed --------------------------------------------------------------------Done
+9) dorobiæ opcjê cookies
+10) dostosowaæ stronê do wersji mobilnej
+11) dorobiæ copyright i autora strony
+12) transition smooth na zdjêciu Oli
+13) DOtyczy 1 punktu - ogarn¹æ przesuwanie po filtrowaniu

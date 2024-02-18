@@ -31,6 +31,8 @@
     justify-content: center;
     text-align: center;
     height: 100%;
+    transition: background-image 1s;
+    transition-timing-function: ease;
 }
 
 .welcome-cotainer-text {
@@ -173,3 +175,66 @@
     top: 80px;
     z-index: 1000; /* Ensure the buttons appear above other content */
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+  }
+  
+  .modal-content {
+    position: relative;
+    text-align: center;
+    max-width: 80%; /* Adjust as needed */
+    max-height: 100%; /* Adjust as needed */
+    margin: auto;
+  }
+  
+  .modal-content img {
+    margin-top: 2.5vh;
+    max-width: auto;
+    max-height: 95vh;
+  }
+
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px; /* Adjust as needed */
+    cursor: pointer;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.5); /* Gray background */
+    padding: 15px; /* Increase padding for larger arrows */
+    border: none;
+    z-index: 1;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }

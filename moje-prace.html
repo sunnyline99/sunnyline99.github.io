@@ -80,9 +80,19 @@
                         <!-- Add more buttons for other categories -->
                     </div>
                 </div>
+
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <div class="modal-content">
+                      <img id="modal-img" src="" alt="">
+                      <span class="prev">&#10094;</span>
+                      <span class="next">&#10095;</span>
+                    </div>
+                </div>
+
                 <div class="gallery" id="image-gallery">
                     <!-- Your images go here -->
-                    <img src="images/1.jpg" alt="Easter" data-category="easter" onclick="openModal('images/1.jpg')">
+                    <img src="images/1.jpg" alt="Easter" data-category="easter">
                     <img src="images/2.jpg" alt="Christmas" data-category="christmas">
                     <img src="images/3.jpg" alt="Christmas" data-category="christmas">
                     <img src="images/3.jpg" alt="Christmas" data-category="christmas">
@@ -176,6 +186,68 @@
                 const parallax = document.querySelector('.paralax');
                 const scrollPosition = window.scrollY;
                 parallax.style.transform = 'translate(0px, ' + scrollPosition * 0.2 + 'px)';
+            });
+
+            // Get the modal and the images
+            const modal = document.getElementById('myModal');
+            const modalImg = document.getElementById('modal-img');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const images = document.querySelectorAll('.gallery img');
+
+            let currentImageIndex = 0;
+
+            // Open the modal and set the current image
+            function openModal(index) {
+            modal.style.display = 'block';
+            modalImg.src = images[index].src;
+            currentImageIndex = index;
+            }
+
+            // Close the modal
+            function closeModal() {
+            modal.style.display = 'none';
+            }
+
+            // Navigate to the previous image
+            function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            modalImg.src = images[currentImageIndex].src;
+            }
+
+            // Navigate to the next image
+            function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            modalImg.src = images[currentImageIndex].src;
+            }
+
+            // Event listeners for previous and next buttons
+            prevBtn.addEventListener('click', prevImage);
+            nextBtn.addEventListener('click', nextImage);
+
+            // Event listener for arrow key presses
+            document.addEventListener('keydown', function(event) {
+            if (modal.style.display === 'block') {
+                if (event.key === 'ArrowLeft') {
+                prevImage();
+                } else if (event.key === 'ArrowRight') {
+                nextImage();
+                }
+            }
+            });
+
+            // Event listener for closing the modal
+            modal.addEventListener('click', function(event) {
+            if (event.target === modal || event.target.className === 'close') {
+                closeModal();
+            }
+            });
+
+            // Event listener to open modal when clicking on an image
+            images.forEach((image, index) => {
+            image.addEventListener('click', function() {
+                openModal(index);
+            });
             });
 
         </script>
