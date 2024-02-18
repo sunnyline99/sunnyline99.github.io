@@ -213,9 +213,13 @@
   
   .close:hover,
   .close:focus {
-    color: #999;
+    color: #ae1212;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .close:active {
+    color: #3f0000;
   }
 
   .prev, .next {
@@ -229,6 +233,7 @@
     padding: 15px; /* Increase padding for larger arrows */
     border: none;
     z-index: 1;
+    transition: color 0.2s, background-color 0.2s;
   }
   
   .prev {
@@ -237,6 +242,24 @@
   
   .next {
     right: 0;
+  }
+
+  .prev:hover {
+    background-color: rgba(128, 128, 128, 0.6);
+    color: rgb(229, 121, 121);
+  }
+
+  .next:hover {
+    background-color: rgba(128, 128, 128, 0.6);
+    color: rgb(229, 121, 121);
+  }
+
+  .prev:active {
+    color: rgb(197, 82, 82);
+  }
+
+  .next:active {
+    color: rgb(197, 82, 82);
   }
 
 .scroll-appear {
