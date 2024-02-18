@@ -99,6 +99,10 @@
                 Jakich lakierów używasz?
             </div>
 
+            <div class="scroll-appear">
+                <h1>Your smoothly appearing text goes here...</h1>
+            </div>
+
             <div class="main-content-contact" id="kontakt">
                 <a href="tel:999888333">Skontaktuj się ze mną telefonicznie</a>
                 <a href="mailto:xxx@xx.com">Email: xxx@xx.com</a>
@@ -133,7 +137,29 @@
                 const scrollPosition = window.scrollY;
                 parallax.style.transform = 'translate(0px, ' + scrollPosition * 0.2 + 'px)';
             });
+        </script>
 
+        <script>
+        // Select the element to observe
+        const scrollAppear = document.querySelector('.scroll-appear');
+
+        // Options for the IntersectionObserver
+        const options = {
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        };
+
+        // Create a new IntersectionObserver
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, options);
+
+        // Start observing the element
+        observer.observe(scrollAppear);
         </script>
     </body>
 </html>

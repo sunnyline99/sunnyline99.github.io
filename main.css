@@ -238,3 +238,12 @@
   .next {
     right: 0;
   }
+
+.scroll-appear {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Adjust the duration and timing function as needed */
+}
+
+.appear {
+    opacity: 1 !important;
+}
