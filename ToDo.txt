@@ -5,10 +5,7 @@
 5) dorobiæ sekcjê szkoleñ
 6) doboriæ now¹ sekcjê Blog
 7) Poprawiæ sekcjê kontakt
-8) ogarn¹æ wysokoœæ ca³ej strony - nie fixed --------------------------------------------------------------------Done
-9) dorobiæ opcjê cookies
 10) dostosowaæ stronê do wersji mobilnej
 11) dorobiæ copyright i autora strony
-12) transition smooth na zdjêciu Oli
 13) DOtyczy 1 punktu - ogarn¹æ przesuwanie po filtrowaniu
-14) obecnie wybrana kategoria zaznaczona na guziku, ¿eby by³o widaæ, który jest akutalnie zrobiony
+15) Zrobiæ kawa³ek blogu - jeden wpis ze zdjêciami

@@ -107,6 +107,7 @@
     border-right: 2px;
     border-right-color: black;
     border-right-style: solid;
+    justify-content: space-between;
 }
 
 .about-me-image {
@@ -115,7 +116,7 @@
     border-color: rgba(255, 182, 182, 0.5);
     border-style: solid;
     border-width: 6px;
-    transition: border-color 0.2s;
+    transition: border-color 0.35s, height 0.15s, border-width 0.15s;
 }
 
 .about-me-image:hover {
@@ -171,6 +172,26 @@
 
 .category-button:active {
     background-color: rgb(255, 190, 190);
+}
+
+.active {
+    font-size: 15px;
+    background-color: rgba(252, 100, 100, 0.8);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.active:hover {
+    background-color: rgba(252, 100, 100, 1);
+    box-shadow: 1px 1px 0 1px rgba(255, 182, 182, 0.3);
+}
+
+.active:active {
+    background-color: rgba(255, 31, 31, 0.7);
 }
 
 .paralax-text {

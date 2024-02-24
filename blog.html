@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="general.css">
         <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="footer.css">
         <link rel="stylesheet" href="blog.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,4 +68,48 @@
 
         
     </body>
+
+    <footer class="cookies-popup" id="cookiesPopup">
+        <div class="cookies-content">
+            <p>This website uses cookies to ensure you get the best experience on our website.</p>
+            <button id="acceptCookiesBtn">Accept</button>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cookiesPopup = document.getElementById('cookiesPopup');
+        const acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+    
+        // Check if cookies have been accepted before
+        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    
+        if (!cookiesAccepted) {
+            // Show cookies popup if not accepted before
+            cookiesPopup.style.display = 'block';
+        }
+    
+        // Event listener for accepting cookies
+        acceptCookiesBtn.addEventListener('click', function() {
+            // Set cookiesAccepted to true and hide the popup
+            localStorage.setItem('cookiesAccepted', true);
+            cookiesPopup.style.display = 'none';
+        });
+    
+        // Make the cookies popup sticky while scrolling
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.body.clientHeight;
+    
+            if (scrollPosition + windowHeight >= documentHeight) {
+                cookiesPopup.style.bottom = 'unset';
+                cookiesPopup.style.top = 'auto';
+            } else {
+                cookiesPopup.style.bottom = '0';
+                cookiesPopup.style.top = 'unset';
+            }
+        });
+    });
+    </script>
 </html>

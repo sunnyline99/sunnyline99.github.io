@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="general.css">
         <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="footer.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,9 +78,9 @@
                 <h1 class="main-content-title">Kategorie</h1>
                 <div class="moje-prace-categories" id="filter-container">
                     <div class="filter-buttons">
-                        <button class="category-button" onclick="filterGallery('all')">All</button>
-                        <button class="category-button" onclick="filterGallery('easter')">Easter</button>
-                        <button class="category-button" onclick="filterGallery('christmas')">Christmas</button>
+                        <button class="category-button" onclick="filterGallery('all')" id = "all">All</button>
+                        <button class="category-button" onclick="filterGallery('easter')" id = "easter">Easter</button>
+                        <button class="category-button" onclick="filterGallery('christmas')" id = "christmas">Christmas</button>
                         <!-- Add more buttons for other categories -->
                     </div>
                 </div>
@@ -118,6 +119,29 @@
                         image.style.display = 'block';
                     } else {
                         image.style.display = 'none';
+                    }
+                });
+
+                // Toggle active class on category buttons
+                document.querySelectorAll('.category-button').forEach(button => {
+                    if (button.id === category) {
+                        button.classList.remove('category-button')
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active')
+                        button.classList.add('category-button');
+                    }
+                });
+
+                
+                // Toggle active class on category buttons
+                document.querySelectorAll('.active').forEach(button => {
+                    if (button.id === category) {
+                        button.classList.remove('category-button')
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active')
+                        button.classList.add('category-button');
                     }
                 });
             }
@@ -202,26 +226,60 @@
 
             // Open the modal and set the current image
             function openModal(index) {
-            modal.style.display = 'block';
-            modalImg.src = images[index].src;
-            currentImageIndex = index;
+                if (document.querySelector('.active') == null || document.querySelector('.active').id == "all") {
+                    modal.style.display = 'block';
+                    modalImg.src = images[index].src;
+                    currentImageIndex = index;
+                }
+                else{
+                    const category = document.querySelector('.active').id; // Get the ID of the active category button
+                    const categoryImages = document.querySelectorAll(`.gallery img[data-category="${category}"]`); // Select images within the chosen category
+                    const categoryImageArray = Array.from(categoryImages); // Convert NodeList to Array for easier manipulation
+                    // Find the index of the clicked image within the category
+                    currentImageIndex = categoryImageArray.findIndex(image => image.src === images[index].src);
+                    
+                    modal.style.display = 'block';
+                    modalImg.src = categoryImageArray[currentImageIndex].src;
+                }
             }
 
             // Close the modal
             function closeModal() {
-            modal.style.display = 'none';
+                modal.style.display = 'none';
             }
 
-            // Navigate to the previous image
+            // Navigate to the previous image within the selected category
             function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            modalImg.src = images[currentImageIndex].src;
+                if (document.querySelector('.active') == null || document.querySelector('.active').id == "all") {
+                    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                    modalImg.src = images[currentImageIndex].src;
+                }
+                else {
+                    const category = document.querySelector('.active').id; // Get the ID of the active category button
+                    const categoryImages = document.querySelectorAll(`.gallery img[data-category="${category}"]`); // Select images within the chosen category
+                    const categoryImageArray = Array.from(categoryImages); // Convert NodeList to Array for easier manipulation
+
+                    // Calculate the index of the previous image within the category
+                    currentImageIndex = (currentImageIndex - 1 + categoryImageArray.length) % categoryImageArray.length;
+                    modalImg.src = categoryImageArray[currentImageIndex].src;
+                }
             }
 
-            // Navigate to the next image
+            // Navigate to the next image within the selected category
             function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            modalImg.src = images[currentImageIndex].src;
+                if (document.querySelector('.active') == null || document.querySelector('.active').id == "all") {
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    modalImg.src = images[currentImageIndex].src;
+                }
+                else {
+                    const category = document.querySelector('.active').id; // Get the ID of the active category button
+                    const categoryImages = document.querySelectorAll(`.gallery img[data-category="${category}"]`); // Select images within the chosen category
+                    const categoryImageArray = Array.from(categoryImages); // Convert NodeList to Array for easier manipulation
+
+                    // Calculate the index of the next image within the category
+                    currentImageIndex = (currentImageIndex + 1) % categoryImageArray.length;
+                    modalImg.src = categoryImageArray[currentImageIndex].src;
+                }
             }
 
             // Event listeners for previous and next buttons
@@ -255,4 +313,48 @@
 
         </script>
     </body>
+
+    <footer class="cookies-popup" id="cookiesPopup">
+        <div class="cookies-content">
+            <p>This website uses cookies to ensure you get the best experience on our website.</p>
+            <button id="acceptCookiesBtn">Accept</button>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cookiesPopup = document.getElementById('cookiesPopup');
+        const acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+    
+        // Check if cookies have been accepted before
+        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    
+        if (!cookiesAccepted) {
+            // Show cookies popup if not accepted before
+            cookiesPopup.style.display = 'block';
+        }
+    
+        // Event listener for accepting cookies
+        acceptCookiesBtn.addEventListener('click', function() {
+            // Set cookiesAccepted to true and hide the popup
+            localStorage.setItem('cookiesAccepted', true);
+            cookiesPopup.style.display = 'none';
+        });
+    
+        // Make the cookies popup sticky while scrolling
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.body.clientHeight;
+    
+            if (scrollPosition + windowHeight >= documentHeight) {
+                cookiesPopup.style.bottom = 'unset';
+                cookiesPopup.style.top = 'auto';
+            } else {
+                cookiesPopup.style.bottom = '0';
+                cookiesPopup.style.top = 'unset';
+            }
+        });
+    });
+    </script>
 </html>
