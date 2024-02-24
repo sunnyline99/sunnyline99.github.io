@@ -72,6 +72,27 @@
     border-bottom: 2px double #ffd1d1;
 }
 
+.main-content-szkolenia {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px double #ffd1d1;
+}
+
+.main-content-contact {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px double #ffd1d1;
+}
+
+.main-content-faq {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px double #ffd1d1;
+}
+
 .about-me {
     display: flex;
     columns: 1fr 1fr;
@@ -150,11 +171,6 @@
 
 .category-button:active {
     background-color: rgb(255, 190, 190);
-}
-
-.main-content-contact {
-    display: flex;
-    flex-direction: row;
 }
 
 .paralax-text {

@@ -11,3 +11,4 @@
 11) dorobiæ copyright i autora strony
 12) transition smooth na zdjêciu Oli
 13) DOtyczy 1 punktu - ogarn¹æ przesuwanie po filtrowaniu
+14) obecnie wybrana kategoria zaznaczona na guziku, ¿eby by³o widaæ, który jest akutalnie zrobiony
