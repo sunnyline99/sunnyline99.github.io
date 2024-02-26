@@ -25,6 +25,7 @@ p {
 .main-content-title {
     font-size: 64px;
     margin: 20px;
+    color: rgba(214, 105, 105, 1);
 }
 
 .inline-anchor{

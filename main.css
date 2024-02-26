@@ -307,3 +307,16 @@
 .appear {
     opacity: 1 !important;
 }
+
+.faq-content {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: flex-start;
+}
+
+.faq-question {
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(152, 62, 62, 0.75);
+}

@@ -12,17 +12,19 @@
 		</script>
 		
         <title>Olcixixnails</title>
-
+        
         <link rel="stylesheet" href="general.css">
         <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="footer.css">
-
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     </head>
     
     <body>
@@ -70,13 +72,17 @@
             <div class="paralax-wrapper">
                 <div class="paralax" style="background-image: url('images/2.jpg'); transform: translate(0px, 0px);">
                     <span style="font-size: 120px;">
-                        Aleksandra Pietras
+                        <div class="scroll-appear">
+                            Aleksandra Pietras
+                        </div>
                     </span>
                 </div>
             </div>
 
             <div id="oMnie" class="main-content-about-me">
-                <h1 class="main-content-title">O mnie</h1>
+                <div class="scroll-appear">
+                    <h1 class="main-content-title">O mnie</h1>
+                </div>     
                 <div class="about-me">
                     <div class="about-me-image-container">
                         <a href="https://www.instagram.com/olcixixnails/" target="_blank">
@@ -94,31 +100,44 @@
                                 <li>Prowadzę profesjonalne <a class="inline-anchor" href="#szkolenia" title="Przejdź do szkoleń">szkolenia</a></li>
                                 <li>Inspiruję, maluję i pomagam</li>
                                 <li>Potrzebujesz pomocy? <a class="inline-anchor" href="#kontakt">Skontaktuj się ze mną</a></li>
-                              </ul>
+                            </ul>
                         </span>
                     </div>
                 </div>
             </div>
 
             <div class="main-content-szkolenia" id="szkolenia">
-                <h1 class="main-content-title">Szkolenia</h1>
+                <div class="scroll-appear">
+                    <h1 class="main-content-title">Szkolenia</h1>
+                </div>
                 Najbliższe szkolenie: Hibryda Lublin 02.03.2024-03.03.2024
             </div>
-
-            <div class="scroll-appear">
-                <h1>Your smoothly appearing text goes here...</h1>
-            </div>
-
             <div class="main-content-contact" id="kontakt">
-                <h1 class="main-content-title">Kontakt</h1>
+                <div class="scroll-appear">
+                    <h1 class="main-content-title">Kontakt</h1>
+                </div>
                 <a href="tel:999888333">Skontaktuj się ze mną telefonicznie: +48 999 888 333</a><br>
                 <a href="mailto:xxx@xx.com">Email: xxx@xx.com</a>
             </div>
 
             <div class="main-content-faq" id="faq">
-                <h1 class="main-content-title">FAQ</h1>
-                <div>
-                    Jakich lakierów używasz?
+                <div class="scroll-appear">
+                    <h1 class="main-content-title">FAQ</h1>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-question">
+                        Jakich lakierów używasz?
+                    </div>
+                    <div class="faq-answer">
+                        Różnych, ale najlepiej parucje mi się na lakierach <a class="inline-anchor" href="https://www.instagram.com/olcixixnails/" title="Przejdź do strony">tej firmy</a> i mogę je gorąco polecić każdemu
+                    </div>
+                    <br>
+                    <div class="faq-question">
+                        Jakich mogę się z Tobą umówić na szolenie?
+                    </div>
+                    <div class="faq-answer">
+                        Szkolenia możesz znaleźć w zakładce <a class="inline-anchor" href="#szkolenia" title="Przejdź do szkoleń">szkolenia</a> lub możesz się ze mną skontaktować przez <a class="inline-anchor" href="https://www.instagram.com/olcixixnails/" title="Przejdź do szkoleń">Instagram</a>
+                    </div>
                 </div>
             </div>
         </main>
@@ -150,26 +169,27 @@
         </script>
 
         <script>
-        // Select the element to observe
-        const scrollAppear = document.querySelector('.scroll-appear');
+            const scrollAppearElements = document.querySelectorAll('.scroll-appear');
 
-        // Options for the IntersectionObserver
-        const options = {
-            threshold: 0.5 // Trigger when 50% of the element is visible
-        };
+            // Options for the IntersectionObserver
+            const options = {
+                threshold: 0.65 // Trigger when 50% of the element is visible
+            };
 
-        // Create a new IntersectionObserver
-        const observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('appear');
-                    observer.unobserve(entry.target); // Stop observing once revealed
-                }
+            // Create a new IntersectionObserver
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                        // Don't unobserve the target here to keep observing all elements
+                    }
+                });
+            }, options);
+
+            // Start observing each scroll-appear element
+            scrollAppearElements.forEach(element => {
+                observer.observe(element);
             });
-        }, options);
-
-        // Start observing the element
-        observer.observe(scrollAppear);
         </script>
     </body>
 

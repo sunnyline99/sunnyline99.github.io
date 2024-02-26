@@ -13,6 +13,8 @@
 		
         <title>Olcixixnails</title>
 
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
         <link rel="stylesheet" href="general.css">
         <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="main.css">
@@ -69,13 +71,17 @@
             <div class="paralax-wrapper-moje-prace">
                 <div class="paralax" style="background-image: url('images/2.jpg'); transform: translate(0px, 0px);">
                     <span style="font-size: 120px;">
-                        Moje Prace
+                        <div class="scroll-appear">
+                            Moje Prace
+                        </div>
                     </span>
                 </div>
             </div>
 
             <div class="main-content-gallery" id="prace">
-                <h1 class="main-content-title">Kategorie</h1>
+                <div class="scroll-appear">
+                    <h1 class="main-content-title">Kategorie</h1>
+                </div>
                 <div class="moje-prace-categories" id="filter-container">
                     <div class="filter-buttons">
                         <button class="category-button" onclick="filterGallery('all')" id = "all">All</button>
@@ -311,6 +317,29 @@
             });
             });
 
+        </script>
+        <script>
+            const scrollAppearElements = document.querySelectorAll('.scroll-appear');
+
+            // Options for the IntersectionObserver
+            const options = {
+                threshold: 0.65 // Trigger when 50% of the element is visible
+            };
+
+            // Create a new IntersectionObserver
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                        // Don't unobserve the target here to keep observing all elements
+                    }
+                });
+            }, options);
+
+            // Start observing each scroll-appear element
+            scrollAppearElements.forEach(element => {
+                observer.observe(element);
+            });
         </script>
     </body>
 
