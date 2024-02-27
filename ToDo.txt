@@ -6,7 +6,6 @@
 10) dostosowaæ stronê do wersji mobilnej
 11) dorobiæ copyright i autora strony
 15) Zrobiæ kawa³ek blogu - jeden wpis ze zdjêciami
-16) favicon
 17) cookies
 18) regulamin
 19) ogarn¹æ google analytics i narzêdzia œledz¹ce przejœæia itp.
