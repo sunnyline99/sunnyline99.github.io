@@ -1,0 +1,48 @@
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.main-welcome-webpage {
+    padding: 0px 2px;
+    background: linear-gradient(-45deg, var(--neutral-black), var(--main), var(--seo), var(--design));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 4s ease-in-out infinite alternate;
+}
+
+.main-welcome-design {
+    padding: 0px 2px;
+    color: var(--design);
+    background: linear-gradient(-45deg, var(--main), var(--seo), var(--design), var(--neutral-black));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 4s ease-in-out infinite alternate;
+}
+
+.main-welcome-seo {
+    padding: 0px 2px;
+    color: var(--design);
+    background: linear-gradient(-45deg, var(--seo), var(--design), var(--neutral-black), var(--main));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 4s ease-in-out infinite alternate;
+}
+
+.typing-container {
+    font-size: 60px;
+}
