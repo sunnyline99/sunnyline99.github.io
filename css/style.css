@@ -1,11 +1,10 @@
 /********** Template CSS **********/
 :root {
-    --primary: #ffe600;
+    --primary: #f1c911;
     --secondary: #ffeb39;
     --light: #F7FAFF;
     --dark: #1D1D27;
 }
-
 
 /*** Spinner ***/
 #spinner {
@@ -91,7 +90,7 @@ h6,
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
     padding: 20px 0;
-    color: var(--dark) !important;
+    color: var(--light) !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -181,11 +180,24 @@ h6,
     }
 
     .sticky-top.navbar-light .navbar-brand h1 {
-        color: var(--dark);
+        color: var(--light);
     }
 
     .navbar-light .navbar-brand h1:hover {
-        color: var(--dark);
+        color: var(--primary);
+    }
+
+    .navbar {
+        background-color: var(--dark);
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: var(--light) !important;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active {
+        color: var(--primary) !important;
     }
 }
 
@@ -261,13 +273,14 @@ h6,
     position: relative;
     height: 350px;
     padding: 30px 25px;
-    background: #FFFFFF;
+    background: var(--primary);
+    color: var(--dark);
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     transition: .5s;
 }
 
 .service-item:hover {
-    background: var(--primary);
+    background: var(--light);
 }
 
 .service-item .service-icon {
@@ -289,12 +302,13 @@ h6,
 
 .service-item h5,
 .service-item p {
+    color: var(--dark);
     transition: .5s;
 }
 
 .service-item:hover h5,
 .service-item:hover p {
-    color: var(--light);
+    color: var(--dark);
 }
 
 .service-item a.btn {
