@@ -75,6 +75,24 @@ h6,
     justify-content: center;
     font-weight: normal;
     border-radius: 50px;
+    color: var(--light);
+}
+
+#start .btn-square {
+    color: var(--dark);
+    background-color: var(--light);
+    border-color: var(--light);
+    border-width: 2px;
+}
+
+.btn-square:hover {
+    color: var(--primary);
+}
+
+#start .btn-square:hover {
+    background-color: var(--dark);
+    color: var(--primary);
+    border-color: var(--light);
 }
 
 
@@ -259,7 +277,7 @@ h6,
     height: 10px;
     top: 2px;
     left: 0;
-    background: var(--secondary);
+    background: var(--primary);
 }
 
 .section-title h6::after {
@@ -493,6 +511,7 @@ h6,
     align-items: center;
     justify-content: center;
     color: var(--light);
+    background-color: var(--dark);
     border: 1px solid rgba(256, 256, 256, .1);
     border-radius: 40px;
     transition: .3s;
@@ -507,7 +526,7 @@ h6,
     margin-bottom: 10px;
     padding: 0;
     text-align: left;
-    color: var(--light);
+    color: var(--dark);
     font-weight: normal;
     transition: .3s;
 }
