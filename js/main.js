@@ -31,6 +31,9 @@
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
+    const $navbar = $(".navbar")
+    const $navbarToggler = $(".navbar-toggler")
+    const $navbarCollapse = $(".navbar-collapse")
 
     $(window).on("load resize", function () {
         if (this.matchMedia("(min-width: 992px)").matches) {
@@ -48,10 +51,17 @@
                     $this.find($dropdownMenu).removeClass(showClass);
                 }
             );
+
         } else {
             $dropdown.off("mouseenter mouseleave");
         }
     });
+
+    // Add click event to hide the dropdown on link click for both desktop and mobile views
+    $navbar.find("a").on("click", function () {
+        $navbarToggler.addClass("collapsed")
+        $navbarCollapse.removeClass(showClass);
+    })
 
 
     // Back to top button

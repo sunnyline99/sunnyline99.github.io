@@ -309,13 +309,23 @@ h6,
     align-items: center;
     justify-content: center;
     color: var(--light);
-    background: url(../img/icon-shape-primary.png) center center no-repeat;
     transition: .5s;
 }
 
+#img-tableau {
+    display: flex;
+    height: 200px;
+    width: 200px;
+}
+
+.service-item .service-icon img {
+    width: 90px;
+    height: 90px;
+}
+
+
 .service-item:hover .service-icon {
     color: var(--primary);
-    background: url(../img/icon-shape-white.png);
 }
 
 .service-item h5,
@@ -356,7 +366,7 @@ h6,
 
 .service-item:hover a.btn::before {
     width: 100%;
-    background: var(--light);
+    background: var(--primary);
 }
 
 
@@ -551,7 +561,7 @@ h6,
 }
 
 .footer .copyright a {
-    color: var(--light);
+    color: var(--dark);
 }
 
 .footer .footer-menu a {
