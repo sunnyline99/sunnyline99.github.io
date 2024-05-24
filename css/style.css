@@ -159,6 +159,11 @@ h6,
     .navbar-light .navbar-brand img {
         max-height: 45px;
     }
+
+    .team-item img {
+        width: 80%;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -216,6 +221,10 @@ h6,
     .navbar-light .navbar-nav .nav-link:hover,
     .navbar-light .navbar-nav .nav-link.active {
         color: var(--primary) !important;
+    }
+
+    .team-item img {
+        width: 100%;
     }
 }
 

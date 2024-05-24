@@ -83,7 +83,7 @@
         autoplay: true,
         smartSpeed: 1000,
         margin: 25,
-        dots: false,
+        dots: true,
         loop: true,
         center: true,
         responsive: {
@@ -116,4 +116,3 @@
     });
 
 })(jQuery);
-
