@@ -705,13 +705,12 @@ progress {
     margin-left: calc(var(--bs-gutter-x) / -2)
 }
 
-.row .power-bi-img {
+.row .bi-img {
     display: flex;
-    margin-top: 0px !important;
     justify-content: center;
 }
 
-.power-bi-img img {
+.bi-img img {
     height: 50%;
 }
 

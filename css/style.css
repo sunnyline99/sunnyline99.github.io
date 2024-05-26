@@ -28,7 +28,6 @@
     z-index: 99;
 }
 
-
 /*** Heading ***/
 h1,
 h2,
@@ -44,6 +43,13 @@ h6,
     font-weight: 500 !important;
 }
 
+
+.div-bi {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-height: 400px;
+}
 
 /*** Button ***/
 .btn {
@@ -134,6 +140,14 @@ h6,
     max-height: 45px;
 }
 
+.hero-header,
+#start .container {
+    margin-top: 0px;
+    margin-bottom: 48px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
 @media (max-width: 991.98px) {
     .sticky-top.navbar-light {
         position: fixed;
@@ -157,11 +171,29 @@ h6,
     }
 
     .navbar-light .navbar-brand img {
-        max-height: 45px;
+        max-height: 80px;
     }
 
     .team-item img {
         width: 80%;
+    }
+
+    .hero-header {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    #start .container {
+        margin-top: 8px;
+        margin-bottom: 0px;
+        padding-top: 8px;
+        padding-bottom: 0px;
+    }
+
+    .row .power-bi-img {
+        padding-top: 50px;
     }
 
 }
@@ -385,8 +417,7 @@ h6,
     background:
         url(../img/bg-top.png),
         url(../img/bg-bottom.png);
-    background-position:
-        left top,
+    background-position: z left top,
         right bottom;
     background-repeat: no-repeat;
 }
