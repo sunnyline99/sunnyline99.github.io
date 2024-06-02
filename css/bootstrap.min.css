@@ -683,6 +683,7 @@ progress {
     }
 }
 
+
 @media (min-width: 1400px) {
 
     .container,
@@ -691,8 +692,10 @@ progress {
     .container-lg,
     .container-xl,
     .container-xxl {
-        max-width: 1320px
+        max-width: 3200px
     }
+
+    /* 1320 */
 }
 
 .row {
@@ -2279,7 +2282,7 @@ progress {
 }
 
 .form-control::placeholder {
-    color: #6c757d;
+    color: var(--bs-dark);
     opacity: 1
 }
 
@@ -3863,7 +3866,7 @@ fieldset:disabled .btn {
     margin: 0;
     font-size: 1rem;
     color: #888;
-    text-align: left;
+    text-align: center;
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
@@ -4489,7 +4492,8 @@ fieldset:disabled .btn {
 .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 1;
-    align-items: center
+    align-items: center;
+    text-align: center;
 }
 
 .navbar-toggler {
@@ -12550,4 +12554,8 @@ fieldset:disabled .btn {
     .d-print-none {
         display: none !important
     }
+}
+
+.form-floating {
+    color: var(--bs-dark);
 }

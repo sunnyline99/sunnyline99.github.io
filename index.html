@@ -46,7 +46,7 @@
 
         <!-- Navbar Start -->
         <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 sticky-top shadow-sm'">
                 <a href="" class="navbar-brand p-0">
                     <img id="logo" src="img/Data-Cock.svg" alt="">
                     <h1 class="m-0">Data Cock<span class="fs-5"></span></h1>
@@ -60,18 +60,28 @@
                         <a href="#" class="nav-item nav-link active">Home</a>
                         <a href="#about" class="nav-item nav-link">O nas</a>
                         <div class="nav-item dropdown">
-                            <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Usługi</a>
+                            <a href="#services" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Usługi</a>
                             <div class="dropdown-menu m-0">
-                                <a href="#services" class="dropdown-item">Power BI</a>
-                                <a href="#services" class="dropdown-item">Power Apps</a>
-                                <a href="#services" class="dropdown-item">Tableau</a>
+                                <a href="#services" class="dropdown-item">Wdrożenia Narzędzi BI</a>
+                                <a href="#services" class="dropdown-item">Wsparcie SLA</a>
+                                <a href="#services" class="dropdown-item">Szkolenia BI</a>
+                                <a href="#services" class="dropdown-item">Automatyzacja Procesów</a>
+                                <a href="#services" class="dropdown-item">NearShoring</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#tools" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Narzędzia</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="#tools" class="dropdown-item">Power BI</a>
+                                <a href="#tools" class="dropdown-item">Power Apps</a>
+                                <a href="#tools" class="dropdown-item">Tableau</a>
                             </div>
                         </div>
                         <a href="#portfolio" class="nav-item nav-link">Projekty</a>
                         <!-- <a href="#testimonial" class="nav-item nav-link">Referencje</a> -->
                         <a href="#" class="nav-item nav-link">Blog</a>
                     </div>
-                    <a href="#kontakt" class="btn btn-secondary rounded-pill py-2 px-4 ms-3">Skontaktuj się z nami</a>
+                    <a href="#contact" class="btn btn-secondary rounded-pill py-2 px-4 ms-3">Skontaktuj się z nami</a>
                 </div>
             </nav>
             <!-- Navbar End -->
@@ -269,14 +279,13 @@
             </div> -->
             <!-- Newsletter End -->
 
-
-            <!-- Service Start -->
+            <!-- Services Start -->
             <div id="services" class="container-xxl py-5">
                 <div class="container px-lg-5">
                     <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
                         data-wow-delay="0.1s">
-                        <h6 class="position-relative d-inline text-warning ps-4">Usłgi</h6>
-                        <h2 class="mt-2">Zakres oferowanych usług</h2>
+                        <h6 class="position-relative d-inline text-warning ps-4">Usługi</h6>
+                        <h2 class="mt-2">Usługi, które oferujemy</h2>
                     </div>
                     <div class="row g-4">
                         <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
@@ -318,7 +327,58 @@
                     </div>
                 </div>
             </div>
-            <!-- Service End -->
+            <!-- Services End -->
+
+
+            <!-- Tools Start -->
+            <div id="tools" class="container-xxl py-5">
+                <div class="container px-lg-5">
+                    <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
+                        data-wow-delay="0.1s">
+                        <h6 class="position-relative d-inline text-warning ps-4">Narzędzia</h6>
+                        <h2 class="mt-2">Poznaj narzędzia Business Intelligence, które oferujemy</h2>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                            <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                                <div class="service-icon flex-shrink-0">
+                                    <img src="img/Power-BI.svg" alt="">
+                                </div>
+                                <h5 class="mb-3">Power BI</h5>
+                                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
+                                    sed
+                                    stet lorem.</p>
+                                <a class="btn text-dark px-3 mt-auto mx-auto" href="">Wiecej</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                            <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                                <div class="service-icon flex-shrink-0">
+                                    <img src="img/Power-Apps.svg" alt="">
+                                </div>
+                                <h5 class="mb-3">Power Apps</h5>
+                                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
+                                    sed
+                                    stet lorem.</p>
+                                <a class="btn text-dark px-3 mt-auto mx-auto" href="">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                            <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                                <div class="service-icon flex-shrink-0">
+                                    <img id="img-tableau" src="img/tableau-svgrepo-com.svg" alt="">
+                                </div>
+                                <h5 class="mb-3">Tableau</h5>
+                                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
+                                    sed
+                                    stet lorem.</p>
+                                <a class="btn text-dark px-3 mt-auto mx-auto" href="">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tools End -->
 
 
             <!-- Portfolio Start -->
@@ -491,9 +551,64 @@
             </div> -->
             <!-- Testimonial End -->
 
+
+            <!-- Contact Start -->
+            <div class="container-xxl py-5">
+                <div class="container px-lg-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
+                                data-wow-delay="0.1s">
+                                <h6 id="contact" class="position-relative d-inline text-warning ps-4">Contact Us</h6>
+                                <h2 class="mt-2">Contact For Any Query</h2>
+                            </div>
+                            <div class="wow fadeInUp" data-wow-delay="0.3s">
+                                <form method="post" name="contact_form"
+                                    action="/seo-agency-website-template/php/mail.php">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control text-dark" id="name" name="name"
+                                                    placeholder="Your Name">
+                                                <label for="name">Your Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="email" name="email"
+                                                    placeholder="Your Email">
+                                                <label for="email">Your Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="subject" name="subject"
+                                                    placeholder="Subject">
+                                                <label for="subject">Subject</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Leave a message here"
+                                                    id="message" name="message" style="height: 150px"></textarea>
+                                                <label for="message">Message</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-secondary w-100 py-3" type="submit"
+                                                value="submit">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact End -->
+
             <!-- Footer Start -->
-            <div id="kontakt" class="container-fluid bg-primary text-dark footer mt-5 pt-5 wow fadeIn"
-                data-wow-delay="0.1s">
+            <div class="container-fluid bg-primary text-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
                 <div class="container py-5 px-lg-5">
                     <div class="row g-5">
                         <div class="col-md-6 col-lg-3">

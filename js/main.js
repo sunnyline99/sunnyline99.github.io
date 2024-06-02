@@ -17,13 +17,13 @@
 
 
     // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
-        }
-    });
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 45) {
+    //         $('.navbar').addClass('sticky-top shadow-sm');
+    //     } else {
+    //         $('.navbar').removeClass('sticky-top shadow-sm');
+    //     }
+    // });
 
 
     // Dropdown on mouse hover
@@ -58,10 +58,41 @@
     });
 
     // Add click event to hide the dropdown on link click for both desktop and mobile views
-    $navbar.find("a").on("click", function () {
-        $navbarToggler.addClass("collapsed")
-        $navbarCollapse.removeClass(showClass);
-    })
+
+    // $navbar.find("a").on("click", function () {
+    //     $navbarToggler.addClass("collapsed")
+    //     $navbarCollapse.removeClass(showClass);
+    // })
+
+    $(document).ready(function () {
+        const $navbar = $(".navbar");
+        const $navbarToggler = $(".navbar-toggler");
+        const $navbarCollapse = $(".navbar-collapse");
+        const $dropdownMenu = $(".dropdown-menu");
+        const showClass = "show";
+
+        // Toggle the dropdown on click
+        $navbar.find(".dropdown-toggle").on("click", function (event) {
+            const $dropdown = $(this).next(".dropdown-menu");
+            $dropdown.toggleClass(showClass);
+            const $dropdownShow = $(this).next(".show");
+            $dropdown.toggleClass(showClass);
+            return false; // Prevent default behavior and stop propagation
+        });
+
+        // Collapse the navbar when a non-dropdown link is clicked
+        $navbar.find("a").not(".dropdown-toggle").on("click", function () {
+            $navbarToggler.addClass("collapsed");
+            $navbarCollapse.removeClass(showClass);
+            $dropdownMenu.removeClass(showClass);
+        });
+
+        // Collapse the navbar when a dropdown item is clicked
+        $navbar.find(".dropdown-item").on("click", function () {
+            $navbarToggler.addClass("collapsed");
+            $navbarCollapse.removeClass(showClass);
+        });
+    });
 
 
     // Back to top button
