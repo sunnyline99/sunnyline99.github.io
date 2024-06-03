@@ -147,3 +147,84 @@
     });
 
 })(jQuery);
+
+
+// Make sure that after clicking on menu item the chosen one is highlighted, the dropdown aswell
+// Highlight menu while scrolling
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    const contactButtons = document.querySelectorAll('a[href="#contact"]');
+    const sections = document.querySelectorAll('div[id]'); // Select all divs with an id attribute
+
+    // Function to remove the active class from all navigation links and dropdown items
+    function removeActiveClasses() {
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        dropdownItems.forEach(item => item.classList.remove('active'));
+    }
+
+    // Event listeners for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            removeActiveClasses();
+            this.classList.add('active');
+        });
+    });
+
+    // Event listeners for dropdown items
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function () {
+            removeActiveClasses();
+
+            // Highlight the main dropdown link
+            const parentDropdown = this.closest('.nav-item.dropdown').querySelector('.nav-link');
+            parentDropdown.classList.add('active');
+
+            // Highlight the clicked dropdown item
+            this.classList.add('active');
+        });
+    });
+
+    // Event listeners for contact buttons
+    contactButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            removeActiveClasses();
+        });
+    });
+
+    // Intersection Observer to highlight navigation links on scroll
+    const observerOptions = {
+        threshold: 0.5 // Adjust this value to determine when a section is considered in view
+    };
+
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                removeActiveClasses();
+                const id = entry.target.id;
+                let activeLink;
+
+                if (id === 'team') {
+                    // Special case for #team section
+                    activeLink = document.querySelector('a[href="#about"]');
+                } else if (id === 'contact') {
+                    // No corresponding nav link for contact, do nothing
+                    return;
+                } else {
+                    activeLink = document.querySelector(`a[href="#${id}"]`);
+                }
+
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
