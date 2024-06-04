@@ -258,6 +258,11 @@ h6,
     .team-item img {
         width: 100%;
     }
+
+    .bi-img {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
 }
 
 /*** Hero Header ***/
@@ -290,6 +295,19 @@ h6,
             left 55% top -1px,
             left 45% bottom -1px;
         background-repeat: no-repeat;
+    }
+
+    .hero-header {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .bi-img {
+        margin-bottom: 0;
+    }
+
+    .div-bi {
+        justify-content: center;
     }
 }
 

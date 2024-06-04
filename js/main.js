@@ -190,6 +190,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     contactButtons.forEach(button => {
         button.addEventListener('click', function () {
             removeActiveClasses();
+            navLinks.forEach(nav => nav.classList.remove('active')); // Remove active class from navigation links
+            dropdownItems.forEach(item => item.classList.remove('active')); // Remove active class from dropdown items
         });
     });
 
