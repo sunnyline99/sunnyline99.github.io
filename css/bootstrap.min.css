@@ -4,6 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -52,7 +53,7 @@ body {
     color: var(--bs-light);
     background-color: #F3F6FF;
     -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 hr {
@@ -92,7 +93,7 @@ h1,
     font-size: calc(1.375rem + 1.5vw)
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
 
     h1,
     .h1 {
@@ -105,7 +106,7 @@ h2,
     font-size: calc(1.325rem + .9vw)
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
 
     h2,
     .h2 {
@@ -118,7 +119,7 @@ h3,
     font-size: calc(1.3rem + .6vw)
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
 
     h3,
     .h3 {
@@ -131,7 +132,7 @@ h4,
     font-size: calc(1.275rem + .3vw)
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
 
     h4,
     .h4 {
@@ -416,7 +417,7 @@ legend {
     line-height: inherit
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     legend {
         font-size: 1.5rem
     }
@@ -494,7 +495,7 @@ progress {
     line-height: 1.2
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .display-1 {
         font-size: 5rem
     }
@@ -506,7 +507,7 @@ progress {
     line-height: 1.2
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .display-2 {
         font-size: 4.5rem
     }
@@ -518,7 +519,7 @@ progress {
     line-height: 1.2
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .display-3 {
         font-size: 4rem
     }
@@ -530,7 +531,7 @@ progress {
     line-height: 1.2
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .display-4 {
         font-size: 3.5rem
     }
@@ -542,7 +543,7 @@ progress {
     line-height: 1.2
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .display-5 {
         font-size: 3rem
     }
@@ -554,7 +555,7 @@ progress {
     line-height: 1.2
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .display-6 {
         font-size: 2.5rem
     }
@@ -642,7 +643,9 @@ progress {
     padding-right: var(--bs-gutter-x, .75rem);
     padding-left: var(--bs-gutter-x, .75rem);
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    scroll-margin-top: 93px;
+
 }
 
 @media (min-width: 576px) {
@@ -672,7 +675,7 @@ progress {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
 
     .container,
     .container-sm,
@@ -1576,7 +1579,7 @@ progress {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .col-xl {
         flex: 1 0 0%
     }
@@ -3982,7 +3985,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .dropdown-menu-xl-start {
         --bs-position: start
     }
@@ -4636,7 +4639,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .navbar-expand-xl {
         flex-wrap: nowrap;
         justify-content: flex-start
@@ -5630,7 +5633,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .list-group-horizontal-xl {
         flex-direction: row
     }
@@ -6092,7 +6095,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .modal-xl {
         max-width: 1140px
     }
@@ -7054,7 +7057,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .sticky-xl-top {
         position: sticky !important;
         ;
@@ -10892,7 +10895,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .float-xl-start {
         float: left !important
     }
@@ -12496,7 +12499,7 @@ fieldset:disabled .btn {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
     .fs-1 {
         font-size: 2.5rem !important
     }

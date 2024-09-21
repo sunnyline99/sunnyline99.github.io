@@ -175,7 +175,7 @@ h6,
     }
 
     .team-item img {
-        width: 80%;
+        width: 100%;
     }
 
     .hero-header {
@@ -194,6 +194,33 @@ h6,
 
     .row .power-bi-img {
         padding-top: 50px;
+    }
+
+    .change-text-size {
+        font-size: 1.35rem;
+    }
+
+    .service-item .service-icon {
+        margin: 0 auto 20px auto;
+        width: 65px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        transition: .5s;
+    }
+
+    #img-tableau {
+        display: flex;
+        height: 200px;
+        width: 200px;
+    }
+
+
+    .service-item .service-icon img {
+        width: 65px;
+        height: 65px;
     }
 
 }
@@ -256,12 +283,40 @@ h6,
     }
 
     .team-item img {
+        max-height: 500px;
         width: 100%;
     }
 
     .bi-img {
         margin-top: 0;
         margin-bottom: 40px;
+    }
+
+    .change-text-size {
+        font-size: 0.8rem;
+    }
+
+    .service-item .service-icon {
+        margin: 0 auto 20px auto;
+        width: 65px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        transition: .5s;
+    }
+
+    #img-tableau {
+        display: flex;
+        height: 200px;
+        width: 200px;
+    }
+
+
+    .service-item .service-icon img {
+        width: 65px;
+        height: 65px;
     }
 }
 
@@ -308,6 +363,38 @@ h6,
 
     .div-bi {
         justify-content: center;
+    }
+
+    .team-item img {
+        max-height: fit-content;
+        max-width: 100%;
+    }
+
+    .change-text-size {
+        font-size: 1.25rem;
+    }
+
+    .service-item .service-icon {
+        margin: 0 auto 20px auto;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        transition: .5s;
+    }
+
+    #img-tableau {
+        display: flex;
+        height: 200px;
+        width: 200px;
+    }
+
+
+    .service-item .service-icon img {
+        width: 90px;
+        height: 90px;
     }
 }
 
@@ -374,7 +461,7 @@ h6,
     background: var(--light);
 }
 
-.service-item .service-icon {
+/* .service-item .service-icon {
     margin: 0 auto 20px auto;
     width: 90px;
     height: 90px;
@@ -391,10 +478,11 @@ h6,
     width: 200px;
 }
 
+
 .service-item .service-icon img {
     width: 90px;
     height: 90px;
-}
+} */
 
 
 .service-item:hover .service-icon {
@@ -646,4 +734,17 @@ h6,
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+.team-description {
+    background-color: var(--light);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.img-shirt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
 }
