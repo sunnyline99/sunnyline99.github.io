@@ -337,6 +337,15 @@ h6,
     background-repeat: no-repeat;
 }
 
+@media (min-width: 1150px) {
+
+    .change-text-size {
+        font-size: 0.95rem;
+    }
+
+}
+
+
 @media (min-width: 1320px) {
     .hero-header {
         background:
@@ -396,6 +405,18 @@ h6,
         width: 90px;
         height: 90px;
     }
+}
+
+@media (max-width: 575.98px) {
+
+    .change-text-size {
+        font-size: 0.85rem;
+    }
+
+    .btn-square {
+        border-radius: 22px;
+    }
+
 }
 
 /*** Section Title ***/
