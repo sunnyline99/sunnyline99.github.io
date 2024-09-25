@@ -175,7 +175,7 @@ h6,
     }
 
     .team-item img {
-        width: 100%;
+        width: auto;
     }
 
     .hero-header {
@@ -283,7 +283,7 @@ h6,
     }
 
     .team-item img {
-        max-height: 500px;
+        max-height: 700px;
         width: 100%;
     }
 

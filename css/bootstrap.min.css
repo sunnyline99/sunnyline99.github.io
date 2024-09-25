@@ -605,7 +605,6 @@ progress {
 }
 
 .img-fluid {
-    max-width: 100%;
     height: auto
 }
 
@@ -661,7 +660,7 @@ progress {
     .container,
     .container-sm,
     .container-md {
-        max-width: 720px
+        max-width: 780px
     }
 }
 
@@ -671,7 +670,9 @@ progress {
     .container-sm,
     .container-md,
     .container-lg {
-        max-width: 960px
+        max-width: 1320px;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 }
 
@@ -682,7 +683,7 @@ progress {
     .container-md,
     .container-lg,
     .container-xl {
-        max-width: 1140px
+        max-width: 1320px
     }
 }
 
